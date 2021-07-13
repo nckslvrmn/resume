@@ -1,0 +1,238 @@
+{
+  "basics": {
+    "name": "Nick Silverman",
+    "label": "Senior DevOps Engineer",
+    "picture": "https://www.gravatar.com/avatar/6bea3244af7ecd0ff34e25bed7184997?s=500&r=pg&d=mm",
+    "email": "nckslvrmn@gmail.com",
+    "phone": "(860) 490-9895",
+    "website": "https://nckslvr.mn",
+    "summary": "Senior DevOps Engineer with full and hybrid cloud operation and migration expperience. Expertise in designing and implementing platform architectures and all necessary infrastructure to support them. Enterprise production-level operation experience with SLA, DR, and 24/7 NOC requirements. Automation-conscious at every step, from developer commit to production running code. Always looking to improve process and infrastructure with DevOps ideologies in mind.",
+    "location": {
+      "address": "160 Harriet Ave",
+      "postalCode": "02171",
+      "city": "Quincy",
+      "countryCode": "US",
+      "region": "Massachusetts"
+    },
+    "profiles": [
+      {
+        "network": "github",
+        "url": "https://github.com/nckslvrmn"
+      },
+      {
+        "network": "linkedin",
+        "url": "https://lnkd.in/FSBXQP"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "SessionM",
+      "position": "Senior DevOps Engineer",
+      "website": "https://sessionm.com",
+      "startDate": "2017-08-01",
+      "summary": "Team leader, mentor, and primary architecture and technical resource for the organization including senior management. Oversaw and organized major platform changes and projects. Designed tooling for further internal automation.",
+      "highlights": [
+        "Unified Puppet codebase so all platforms are configured and operate uniformly.",
+        "Authored and deployed internal Ruby web services for employee use and platform automation and monitoring.",
+        "Designed and organized architecture for all new platform features in collaboration with engineering teams.",
+        "Coordinated platform-wide improvements and planned maintenance with the organization and customers.",
+        "Created systems for improved internal platform stability and performance.",
+        "Built out the platform into new global regions in an effort to expand to global markets.",
+        "Developed and managed AWS and vendor business and technical relationships."
+      ]
+    },
+    {
+      "company": "SessionM",
+      "position": "DevOps Engineer",
+      "website": "https://sessionm.com",
+      "startDate": "2016-04-01",
+      "endDate": "2017-08-01",
+      "summary": "Primary developer and maintainer of the production platforms. Designed and implemented a re-architecture of the platform infrastructure. Responsilble for 24/7 NOC and SLA level support.",
+      "highlights": [
+        "Designed and implemented a multi-tenant architecture for the production platform that is cost efficient and scalable for any size customer.",
+        "Migrated legacy platform from on-prem solution to full-cloud solution.",
+        "Improved platform stability with near real-time monitoring solution and automated service-level management.",
+        "Designed multi-region DR remediation plans and processes to ensure fault tolerance.",
+        "Automated new tenant creation and created CI/CD for the product.",
+        "Maintained custom webserver and other application binaries, optimized for the production platform.",
+        "Converted infrastructure to Terraform code and designed drop-in modules for all future infrastructure.",
+        "Crafted incident response workflow and process for multi-tier support."
+      ]
+    },
+    {
+      "company": "SessionM",
+      "position": "Junior DevOps Engineer",
+      "website": "https://sessionm.com",
+      "startDate": "2015-07-01",
+      "endDate": "2016-04-01",
+      "summary": "Learned the platform architecture to grow into an individual contributor. Maintained the operation of the legacy platform and assisted in the implentation of a new platform for enterprise customers.",
+      "highlights": [
+        "Implemented corporate Windows infrastructure via Active Directory and migrated from Open Directory.",
+        "Authored monintoring scripts for various aspects of the platform.",
+        "Designed and implemented automated external monitoring solution for internal and external customers.",
+        "Deployed new production platforms for onboarding clients."
+      ]
+    },
+    {
+      "company": "Hachette Book Group",
+      "position": "IT Desktop Support Analyst",
+      "website": "https://www.hachettebookgroup.com/",
+      "startDate": "2014-09-01",
+      "endDate": "2015-07-01",
+      "summary": "Provided Level Two support for all hardware and software. Managed multiple inventory and package management systems. Built and configured multiple Linux servers for internal support tools using Puppet."
+    },
+    {
+      "company": "Hachette Book Group",
+      "position": "IT Helpdesk Analyst",
+      "website": "https://www.hachettebookgroup.com/",
+      "startDate": "2014-08-01",
+      "endDate": "2014-09-01",
+      "summary": "First line of technical support for all HBG employees. Supported Microsoft Office, Adobe CS Suite, and many other internal sytems and applications on Mac and PC."
+    },
+    {
+      "company": "Apple",
+      "position": "Expert",
+      "website": "https://www.apple.com/",
+      "startDate": "2013-08-01",
+      "endDate": "2014-08-01",
+      "summary": "Sales leader in all metrics of the store. Provided technical and sales support for more advanced customers and specialists. Trained and mentored specialists and led store meetings."
+    },
+    {
+      "company": "Apple",
+      "position": "Specialist",
+      "website": "https://www.apple.com/",
+      "startDate": "2012-10-01",
+      "endDate": "2013-08-01",
+      "summary": "Sales and support for all customers of the Apple Retail Store. Performed basic troubleshooting of iOS and Mac issues."
+    },
+    {
+      "company": "AppleCare",
+      "position": "At Home Advisor (iOS)",
+      "website": "https://support.apple.com/contact",
+      "startDate": "2012-04-01",
+      "endDate": "2012-10-01",
+      "summary": "Provided phone support for iOS devices, iTunes, and Apple ID. Certified on iOS device hardware and software."
+    },
+    {
+      "company": "The Center for 21st Century Skills",
+      "position": "IT Intern",
+      "website": "https://www.skills21.org/",
+      "startDate": "2012-08-01",
+      "endDate": "2014-08-01",
+      "summary": "Technical Engineer for TEDx LitchfieldED conference. Audio/Visual support for 2012 Connecticut Student Innovation Expo. Maintained mobile iPod touch and Macbook labs."
+    },
+    {
+      "company": "Miss Porters School",
+      "position": "IT/Technical Support",
+      "website": "https://www.porters.org/",
+      "startDate": "2011-04-01",
+      "endDate": "2011-09-01",
+      "summary": "Hardware, software, and peripheral support throughout campus, Mac and PC. Managed Cisco switches and other network devices."
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Wentworth Internet Radio and Entertainment",
+      "position": "Music and Library Manager",
+      "website": "https://wire.wit.edu/",
+      "startDate": "2012-09-01",
+      "endDate": "2014-06-01",
+      "summary": "Managed the digital library of music and media for the station. Organized purchase and distribution of digital content."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Wentworth Institute of Technology",
+      "area": "Computer Networking and Information Systems",
+      "studyType": "",
+      "startDate": "2012-09-01",
+      "endDate": "2014-06-01"
+    },
+    {
+      "institution": "Berklee College of Music",
+      "area": "Music Production and Engineering",
+      "studyType": "",
+      "startDate": "2011-09-01",
+      "endDate": "2012-01-01"
+    }
+  ],
+  "skills": [
+    {
+      "name": "AWS Technologies",
+      "level": "Master",
+      "keywords": [
+        "CloudFront",
+        "CloudWatch",
+        "DC",
+        "DS",
+        "EC2",
+        "ECS",
+        "EFS",
+        "ELB",
+        "EMR",
+        "IAM",
+        "RDS",
+        "Redshift",
+        "Route53",
+        "S3",
+        "SES",
+        "SQS/SNS",
+        "VPC"
+      ]
+    },
+    {
+      "name": "Cloud Technologies",
+      "level": "Master",
+      "keywords": [
+        "Fastly/Akamai",
+        "Meraki",
+        "OpenStack",
+        "Runscope",
+        "Sentry",
+        "ThousandEyes",
+        "Wormly",
+        "VMWare/ESXI"
+      ]
+    },
+    {
+      "name": "Software",
+      "level": "Master",
+      "keywords": [
+        "Active Directory",
+        "Atlassian Suite",
+        "Cassandra",
+        "Consul/Vault",
+        "DCOS",
+        "Docker",
+        "Git",
+        "Graphite",
+        "Jenkins",
+        "Mysql/Aurora",
+        "Nginx/Apache",
+        "Puppet",
+        "RabbitMQ",
+        "Syslog-NG",
+        "Terraform",
+        "Xymon"
+      ]
+    },
+    {
+      "name": "Linux",
+      "level": "Master",
+      "keywords": [
+        "Arch",
+        "CentOS",
+        "Ubuntu/Debian"
+      ]
+    },
+    {
+      "name": "Languages",
+      "level": "Master",
+      "keywords": [
+        "Bash",
+        "Ruby"
+      ]
+    }
+  ]
+}
