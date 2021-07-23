@@ -172,7 +172,7 @@
                         <ul class="list-unstyled">
                         {% for edu in resume['education'] %}
                           <div>
-                            <p><strong>{{ edu['area'] }},</strong>,&nbsp;{{ edu['institution'] }}</p>
+                            <p class="mb-0"><strong>{{ edu['area'] }},</strong>&nbsp;{{ edu['institution'] }}</p>
                             <p class="text-muted">
                               <small>{{ humanize_date(edu['startDate'], edu['endDate']) }}</small>
                             </p>
@@ -197,7 +197,7 @@
                         <ul class="list-unstyled">
                         {% for volun in resume['volunteer'] %}
                           <li class="card-nested">
-                            <p><strong>{{ volun['position'] }}</strong>,&nbsp;{{ volun['organization'] }}</p>
+                            <p class="mb-0"><strong>{{ volun['position'] }}</strong>,&nbsp;{{ volun['organization'] }}</p>
                             <p class="text-muted">
                               <small>{{ humanize_date(volun['startDate'], volun['endDate']) }}</small>
                             </p>

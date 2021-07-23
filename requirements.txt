@@ -1,2 +1,4 @@
+boto3==1.18.5
+humanize==3.10.0
 Jinja2==2.11.2
 python-dateutil==2.8.1
