@@ -160,7 +160,6 @@
   "skills": [
     {
       "name": "AWS Technologies",
-      "level": "Master",
       "keywords": [
         "CloudFront",
         "CloudWatch",
@@ -183,7 +182,6 @@
     },
     {
       "name": "Cloud Technologies",
-      "level": "Master",
       "keywords": [
         "Fastly/Akamai",
         "Meraki",
@@ -197,7 +195,6 @@
     },
     {
       "name": "Software",
-      "level": "Master",
       "keywords": [
         "Active Directory",
         "Atlassian Suite",
@@ -219,7 +216,6 @@
     },
     {
       "name": "Linux",
-      "level": "Master",
       "keywords": [
         "Arch",
         "CentOS",
@@ -228,7 +224,6 @@
     },
     {
       "name": "Languages",
-      "level": "Master",
       "keywords": [
         "Bash",
         "Ruby"

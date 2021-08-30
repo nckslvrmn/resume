@@ -60,7 +60,7 @@
                 <div class="col">
                   <a href="{{ profile['url'] }}" class="card-link" style="text-decoration: none" target="_blank">
                     <i class="fab fa-2x fa-{{ profile['network'].lower() }} text-muted"></i>
-                    <span class="align-top" style="color: #428bca">{{ profile['url'] }}</span>
+                    <span class="d-table-cell align-middle" style="color: #428bca">{{ profile['url'] }}</span>
                   </a>
                 </div>
               {% endfor %}
@@ -149,7 +149,7 @@
                         <ul class="list-unstyled" style="border-left: 9px solid #222">
                         {% for skill in resume['skills'] %}
                           <li class="m-3">
-                            <strong>{{ skill['name'] }} ({{ skill['level'] }}):</strong>
+                            <strong>{{ skill['name'] }}:</strong>
                             <span>{{ ", ".join(skill['keywords']) }}</span>
                           </li>
                         {% endfor %}
