@@ -19,12 +19,15 @@ jobs:
 
       - name: install dependencies
         run: python -m pip install -r requirements.txt
+        
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@master
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
       - name: render & publish
         run: ./render && ./publish
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: us-east-1
           S3_BUCKET: ${{ secrets.S3_BUCKET }}
           CF_DISTRO_ID: ${{ secrets.CF_DISTRO_ID }}
