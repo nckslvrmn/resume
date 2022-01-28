@@ -2,11 +2,14 @@ name: publish
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, test-role ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
 
     steps:
       - name: checkout repo content
