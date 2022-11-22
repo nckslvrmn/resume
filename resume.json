@@ -179,72 +179,69 @@
     {
       "name": "AWS Technologies",
       "keywords": [
-        "CloudFront",
-        "CloudWatch",
-        "DC",
-        "DS",
-        "EC2",
-        "ECS",
-        "EFS",
-        "ELB",
-        "EMR",
+        "APIGateway",
+        "Lambda",
+        "DynamoDB",
+        "VPC",
+        "ECS/ECR",
+        "EC2/AutoScaling",
         "IAM",
-        "RDS",
-        "Redshift",
+        "ELB",
         "Route53",
+        "SSM",
+        "CloudWatch/EventBridge",
+        "CloudFront",
+        "EFS",
+        "ElastiCache/Search",
+        "RDS",
         "S3",
         "SES",
-        "SQS/SNS",
-        "VPC"
+        "SQS/SNS"
       ]
     },
     {
-      "name": "Cloud Technologies",
+      "name": "Cloud Services/Technologies",
       "keywords": [
         "Fastly/Akamai",
-        "Meraki",
-        "OpenStack",
-        "Runscope",
-        "Sentry",
-        "ThousandEyes",
-        "Wormly",
+        "GitHub",
+        "PagerDuty",
+        "DataDog",
+        "Slack",
         "VMWare/ESXI"
       ]
     },
     {
       "name": "Software",
       "keywords": [
+        "Terraform",
         "Active Directory",
         "Atlassian Suite",
-        "Cassandra",
-        "Consul/Vault",
-        "DCOS",
         "Docker",
         "Git",
-        "Graphite",
         "Jenkins",
         "Mysql/Aurora",
         "Nginx/Apache",
         "Puppet",
-        "RabbitMQ",
-        "Syslog-NG",
-        "Terraform",
-        "Xymon"
+        "Ansible"
       ]
     },
     {
       "name": "Linux",
       "keywords": [
-        "Arch",
-        "CentOS",
-        "Ubuntu/Debian"
+        "Amazon Linux",
+        "RHEL/CentOS",
+        "Ubuntu/Debian",
+        "Bottle Rocket",
+        "Arch"
       ]
     },
     {
       "name": "Languages",
       "keywords": [
-        "Bash",
-        "Ruby"
+        "Python",
+        "Golang",
+        "HCL",
+        "Bash"
       ]
     }
   ]
