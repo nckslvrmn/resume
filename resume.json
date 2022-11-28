@@ -27,21 +27,46 @@
       "company": "Rue Gilt Groupe",
       "position": "Infrastructure Architect",
       "website": "https://ruegiltgroupe.com/",
-      "startDate": "2019-07-01"
+      "startDate": "2019-07-01",
+      "summary": "Principal individual responsible for working with development teams across the technology organization to design complex systems architectures cloud infrastructure. Creating operational standards and best practices to multiply the capabilities of all team members. Leading major technology initiatives to drive the future success of the business.",
+      "highlights": [
+        "Lead multi-year, multi-department project to decommission legacy Active Directory domain used throughout the company",
+        "Designed and deployed socialized business standards and infrastructure for scalable, resilient container infrastructure and orchestration for all current and future production systems",
+        "Designed and implemented multi-region, multi-account, and hybrid networking solution for cross environment and office network connectivity on AWS including secure third-party partner access",
+        "Contributed to AWS open-source codebases and authored public blog posts on AWS official blog",
+        "Developed container runtime for legacy .net applications, leading in the modernization of their infrastructure in collaboration with the development teams",
+        "Created training curriculum and instructed teams on cloud-native architectures and best practices",
+        "Primary management of AWS and cloud costs, building clear tagging and reporting standards for all resources. Calculated and executed on enterprise savings and discount plans with AWS",
+        "Designed and developed real time production uptime monitoring and reporting system, providing high level, single pane of glass views for business stakeholders"
+      ]
     },
     {
       "company": "Rue Gilt Groupe",
       "position": "Principal Infrastructure Engineer",
       "website": "https://ruegiltgroupe.com/",
       "startDate": "2018-11-27",
-      "endDate": "2019-07-01"
+      "endDate": "2019-07-01",
+      "summary": "Experienced cloud infrastructure engineer driving standards and best practices in modern AWS environments. Developed automation tooling to accelerate platform maturity and increased cloud-native usage.",
+      "highlights": [
+        "Re-platformed multiple services to scalable, resilient containerized architectures",
+        "Developed and implemented standards for complex, modularized, and repeatable Infrastructure as code via terraform used across technology organization",
+        "Lead integration and redesign of cloud infrastructure from a business acquisition"
+      ]
     },
     {
       "company": "SessionM",
       "position": "Director of DevOps",
       "website": "https://sessionm.com",
       "startDate": "2018-04-01",
-      "endDate": "2018-11-25"
+      "endDate": "2018-11-25",
+      "summary": "Department leader, mentor, and primary point of contact for DevOps across the business. Lead the team in architecture and complex systems development. Regular contact with executive level leadership to steer future of tech from the DevOps lens.",
+      "highlights": [
+        "Spearheaded re-platforming of acquired business to standardize operations and increase integration with core technologies",
+        "Oversaw DevOps team responsible for AWS deployments and maintenance, and site reliability efforts",
+        "Designed and developed a streamlined tracking process for provisioning new customer environments",
+        "Owned and managed operational budgets across all DevOps vendors including AWS, Atlassian, Fastly, etc.",
+        "Collaborated across tech teams to support and improve systems supporting CI/CD and customer environments"
+      ]
     },
     {
       "company": "SessionM",
@@ -49,7 +74,7 @@
       "website": "https://sessionm.com",
       "startDate": "2017-08-01",
       "endDate": "2018-04-01",
-      "summary": "Team leader, mentor, and primary architecture and technical resource for the organization including senior management. Oversaw and organized major platform changes and projects. Designed tooling for further internal automation.",
+      "summary": "Team lead who oversaw and organized major platform changes and projects. Designed tooling for further internal automation.",
       "highlights": [
         "Unified Puppet codebase so all platforms are configured and operate uniformly.",
         "Authored and deployed internal Ruby web services for employee use and platform automation and monitoring.",
@@ -66,14 +91,14 @@
       "website": "https://sessionm.com",
       "startDate": "2016-04-01",
       "endDate": "2017-08-01",
-      "summary": "Primary developer and maintainer of the production platforms. Designed and implemented a re-architecture of the platform infrastructure. Responsilble for 24/7 NOC and SLA level support.",
+      "summary": "Primary developer and maintainer of the production platforms. Designed and implemented a re-architecture of the platform infrastructure. Responsible for 24/7 NOC and SLA level support.",
       "highlights": [
         "Designed and implemented a multi-tenant architecture for the production platform that is cost efficient and scalable for any size customer.",
         "Migrated legacy platform from on-prem solution to full-cloud solution.",
         "Improved platform stability with near real-time monitoring solution and automated service-level management.",
         "Designed multi-region DR remediation plans and processes to ensure fault tolerance.",
         "Automated new tenant creation and created CI/CD for the product.",
-        "Maintained custom webserver and other application binaries, optimized for the production platform.",
+        "Maintained custom web-server and other application binaries, optimized for the production platform.",
         "Converted infrastructure to Terraform code and designed drop-in modules for all future infrastructure.",
         "Crafted incident response workflow and process for multi-tier support."
       ]
@@ -84,12 +109,12 @@
       "website": "https://sessionm.com",
       "startDate": "2015-07-01",
       "endDate": "2016-04-01",
-      "summary": "Learned the platform architecture to grow into an individual contributor. Maintained the operation of the legacy platform and assisted in the implentation of a new platform for enterprise customers.",
+      "summary": "Learned the platform architecture to grow into an individual contributor. Maintained the operation of the legacy platform and assisted in the implementation of a new platform for enterprise customers.",
       "highlights": [
         "Implemented corporate Windows infrastructure via Active Directory and migrated from Open Directory.",
-        "Authored monintoring scripts for various aspects of the platform.",
+        "Authored monitoring scripts for various aspects of the platform.",
         "Designed and implemented automated external monitoring solution for internal and external customers.",
-        "Deployed new production platforms for onboarding clients."
+        "Deployed new production platforms for on-boarding clients."
       ]
     },
     {
@@ -106,7 +131,7 @@
       "website": "https://www.hachettebookgroup.com/",
       "startDate": "2014-08-01",
       "endDate": "2014-09-01",
-      "summary": "First line of technical support for all HBG employees. Supported Microsoft Office, Adobe CS Suite, and many other internal sytems and applications on Mac and PC."
+      "summary": "First line of technical support for all HBG employees. Supported Microsoft Office, Adobe CS Suite, and many other internal systems and applications on Mac and PC."
     },
     {
       "company": "Apple",
@@ -138,7 +163,7 @@
       "website": "https://www.skills21.org/",
       "startDate": "2012-08-01",
       "endDate": "2014-08-01",
-      "summary": "Technical Engineer for TEDx LitchfieldED conference. Audio/Visual support for 2012 Connecticut Student Innovation Expo. Maintained mobile iPod touch and Macbook labs."
+      "summary": "Technical Engineer for TEDx LitchfieldED conference. Audio/Visual support for 2012 Connecticut Student Innovation Expo. Maintained mobile iPod touch and MacBook labs."
     },
     {
       "company": "Miss Porters School",
