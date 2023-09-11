@@ -20,7 +20,7 @@ def humanize_date(start, end):
     if end is None:
         natural_end = 'present'
     else:
-        natural_end = humanize.naturalday(parser.parse(start), format="%b %Y")
+        natural_end = humanize.naturalday(parser.parse(end), format="%b %Y")
     return f'{natural_start} - {natural_end}'
 
 
