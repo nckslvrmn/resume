@@ -204,60 +204,99 @@
     {
       "name": "AWS Technologies",
       "keywords": [
-        "APIGateway",
-        "Lambda",
-        "DynamoDB",
-        "VPC",
-        "ECS/ECR",
-        "EC2/AutoScaling",
-        "IAM",
-        "ELB",
-        "Route53",
-        "SSM",
-        "CloudWatch/EventBridge",
+        "Amazon EventBridge",
+        "Amazon MQ",
+        "Amazon OpenSearch Service",
+        "Amazon Redshift",
+        "Amazon Simple Email Service",
+        "API Gateway",
+        "Athena",
+        "AWS Auto Scaling",
+        "AWS Backup",
+        "AWS Organizations",
+        "AWS Outposts",
+        "AWS Resource Explorer",
+        "AWS Transfer Family",
+        "Batch",
+        "Billing and Cost Management",
+        "Certificate Manager",
+        "CloudFormation",
         "CloudFront",
+        "CloudTrail",
+        "CloudWatch",
+        "CodeBuild",
+        "CodeCommit",
+        "CodeDeploy",
+        "CodePipeline",
+        "Config",
+        "Database Migration Service",
+        "DataSync",
+        "Direct Connect",
+        "Directory Service",
+        "DynamoDB",
+        "EC2",
         "EFS",
-        "ElastiCache/Search",
+        "Elastic Container Registry",
+        "Elastic Container Service",
+        "ElastiCache",
+        "EMR",
+        "FSx",
+        "IAM Identity Center",
+        "IAM",
+        "Key Management Service",
+        "Kinesis",
+        "Lambda",
         "RDS",
+        "Resource Access Manager",
+        "Route 53",
+        "S3 Glacier",
         "S3",
-        "SES",
-        "SQS/SNS"
+        "Secrets Manager",
+        "Simple Notification Service",
+        "Simple Queue Service",
+        "Storage Gateway",
+        "Systems Manager",
+        "Transit Gateway",
+        "Trusted Advisor",
+        "VPC",
+        "WorkSpaces"
       ]
     },
     {
       "name": "Cloud Services/Technologies",
       "keywords": [
-        "Fastly/Akamai",
+        "Akamai",
+        "Atlassian Suite",
+        "DataDog",
+        "Fastly",
         "GitHub",
         "PagerDuty",
-        "DataDog",
-        "Slack",
-        "VMWare/ESXI"
+        "Slack"
       ]
     },
     {
       "name": "Software",
       "keywords": [
-        "Terraform",
         "Active Directory",
-        "Atlassian Suite",
+        "Ansible",
         "Docker",
         "Git",
         "Jenkins",
         "Mysql/Aurora",
         "Nginx/Apache",
         "Puppet",
-        "Ansible"
+        "Terraform",
+        "VMWare/ESXI"
       ]
     },
     {
-      "name": "Linux",
+      "name": "Linux Distributions",
       "keywords": [
         "Amazon Linux",
         "RHEL/CentOS",
         "Ubuntu/Debian",
         "Bottle Rocket",
-        "Arch"
+        "Arch Linux"
       ]
     },
     {
@@ -265,6 +304,7 @@
       "keywords": [
         "Python",
         "Golang",
+        "Ruby",
         "HCL",
         "Bash"
       ]
