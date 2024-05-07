@@ -1,0 +1,36 @@
+name: publish
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v4
+
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: install dependencies
+        run: pip install -r requirements.txt
+        
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: render & publish
+        run: ./render && ./publish
+        env:
+          S3_BUCKET: ${{ secrets.S3_BUCKET }}
+          CF_DISTRO_ID: ${{ secrets.CF_DISTRO_ID }}

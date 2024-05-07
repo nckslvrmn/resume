@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ resume['basics']['name'] }}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css"
+    integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    function toggler() {
+      let ct = document.documentElement;
+      let toggle = document.getElementById("toggler");
+      if (ct.getAttribute("data-bs-theme") == "light") {
+        ct.setAttribute("data-bs-theme", "dark");
+        toggle.classList.replace("fa-moon", "fa-sun");
+        document.body.classList.replace("bg-light", "bg-dark-subtle");
+      } else {
+        ct.setAttribute("data-bs-theme", "light");
+        toggle.classList.replace("fa-sun", "fa-moon");
+        document.body.classList.replace("bg-dark-subtle", "bg-light");
+      }
+    }
+  </script>
+</head>
+
+<body style="font-family: 'Open Sans'" class="bg-light">
+  <div class="container" style="max-width: 55em">
+
+    <div class="row pb-1 pt-2">
+      <div class="col px-2">
+        <div class="card">
+          <div class="card-body m-3">
+            <div class="row">
+
+              <div class="col" style="max-width: 10em">
+                <img src="{{ resume['basics']['picture'] }}" class="rounded-circle w-100">
+              </div>
+
+              <div class="col-9 ml-2">
+                <h3 class="card-title">{{ resume['basics']['name'] }}</h3>
+                <p class="card-text text-muted">{{ resume['basics']['label'] }}</p>
+
+                <div class="d-inline pe-2">
+                  <a href="mailto:{{ resume['basics']['email'] }}" class="card-link" style="text-decoration: none"
+                    itemprop="email">
+                    <i class="fa fa-lg fa-at text-muted"></i>
+                    <span class="text-body align-top" style="font-size: 0.85rem; text-decoration: underline">{{
+                      resume['basics']['email'] }}</span>
+                  </a>
+                </div>
+
+                <div class="d-inline ps-2">
+                  <i class="fa fa-lg fa-map-marker-alt text-muted"></i>
+                  <span class="text-body align-top" style="font-size: 0.85rem">{{ resume['basics']['location']['city']
+                    }}, {{ resume['basics']['location']['region'] }}, {{ resume['basics']['location']['countryCode'] }}
+                  </span>
+                </div>
+
+                <div class="row pt-3">
+                  {% for profile in resume['basics']['profiles'] %}
+                  <div class="col">
+                    <a href="{{ profile['url'] }}" class="card-link" style="text-decoration: none" target="_blank">
+                      <i class="fab fa-2x fa-{{ profile['network'].lower() }} text-muted"></i>
+                      <span class="d-table-cell align-middle" style="color: #428bca">{{ profile['short_url'] }}</span>
+                    </a>
+                  </div>
+                  {% endfor %}
+                </div>
+
+              </div>
+
+              <div class="col">
+                <i class="fa fa-lg fa-moon text-muted" onclick="toggler()" id="toggler"></i>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row pt-1">
+      <div class="col-md px-2">
+        <div class="card">
+          <div class="card-body px-5 py-5">
+
+            <div class="row">
+              <div class="col">
+                <i class="fa fa-lg fa-user text-muted" style="width: 2rem"></i>
+                <p class="text-muted d-inline" style="font-variant: small-caps; font-size: 1.25rem">About</p>
+                <hr class="text-muted" />
+
+                <div class="row pt-3">
+                  <div class="col">
+                    <div style="float: right; width: 95%">
+                      <p style="text-indent: 2rem">{{ resume['basics']['summary'] }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row pt-5">
+                <div class="col">
+                  <i class="fa fa-lg fa-briefcase text-muted" style="width: 2rem"></i>
+                  <p class="text-muted d-inline" style="font-variant: small-caps; font-size: 1.25rem">Work Experience
+                  </p>
+                  <hr class="text-muted" />
+
+                  <div class="row pt-3">
+                    <div class="col">
+                      <div style="float: right; width: 95%">
+                        <ul class="list-unstyled">
+                          {% for work in resume['work'] %}
+                          <li class="pb-4">
+                            <p class="mb-1">
+                              <strong>{{ work['position'] }}</strong>,&nbsp;
+                              {% if work['website'] is not none %}
+                              <a href="{{ work['website'] }}" class="card-link"
+                                style="color: #428bca; text-decoration: none" target="_blank">{{ work['company'] }}</a>
+                              {% else %}
+                              {{ work['company'] }}
+                              {% endif %}
+                            </p>
+                            <p class="text-muted">
+                              <small>
+                                <span>{{ humanize_date(work['startDate'], work.get('endDate')) }}</span>
+                                {% if work.get('endDate') is not none %}
+                                <span>&nbsp;&nbsp;<i class="far fa-clock"></i>&nbsp;{{
+                                  humanize_duration(work['startDate'], work['endDate']) }}</span>
+                                {% endif %}
+                              </small>
+                            </p>
+                            <p>{{ work['summary'] }}</p>
+                            {% if work.get('highlights') is not none %}
+                            <ul class="pb-3" style="list-style-type: '- ">
+                              {% for highlight in work['highlights'] %}
+                              <li class="my-1">{{ highlight }}</li>
+                              {% endfor %}
+                            </ul>
+                            {% endif %}
+                          </li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <i class="fa fa-lg fa-code text-muted" style="width: 2rem"></i>
+                  <p class="text-muted d-inline" style="font-variant: small-caps; font-size: 1.25rem">Skils</p>
+                  <hr class="text-muted" />
+
+                  <div class="row pt-1">
+                    <div class="col">
+                      <div style="float: right; width: 95%">
+                        <ul class="list-unstyled border-start border-5">
+                          {% for skill in resume['skills'] %}
+                          <li class="m-3">
+                            <strong>{{ skill['name'] }}:</strong>
+                            <span>{{ ", ".join(skill['keywords']) }}</span>
+                          </li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row pt-5 pb-4">
+                <div class="col">
+                  <i class="fas fa-lg fa-graduation-cap text-muted" style="width: 2rem"></i>
+                  <p class="text-muted d-inline" style="font-variant: small-caps; font-size: 1.25rem">Education</p>
+                  <hr class="text-muted" />
+
+                  <div class="row pt-1">
+                    <div class="col">
+                      <div style="float: right; width: 95%">
+                        <ul class="list-unstyled">
+                          {% for edu in resume['education'] %}
+                          <div>
+                            <p class="mb-0"><strong>{{ edu['area'] }},</strong>&nbsp;{{ edu['institution'] }}</p>
+                            <p class="text-muted">
+                              <small>{{ humanize_date(edu['startDate'], edu['endDate']) }}</small>
+                            </p>
+                          </div>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row pt-4">
+                <div class="col">
+                  <i class="fa fa-lg fa-child text-muted" style="width: 2rem"></i>
+                  <p class="text-muted d-inline" style="font-variant: small-caps; font-size: 1.25rem">Volunteer Work</p>
+                  <hr class="text-muted" />
+
+                  <div class="row pt-1">
+                    <div class="col">
+                      <div style="float: right; width: 95%">
+                        <ul class="list-unstyled">
+                          {% for volun in resume['volunteer'] %}
+                          <li class="card-nested">
+                            <p class="mb-0"><strong>{{ volun['position'] }}</strong>,&nbsp;{{ volun['organization'] }}
+                            </p>
+                            <p class="text-muted">
+                              <small>{{ humanize_date(volun['startDate'], volun['endDate']) }}</small>
+                            </p>
+                            <p>{{ volun['summary'] }}</p>
+                          </li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
