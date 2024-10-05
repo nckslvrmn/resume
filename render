@@ -30,7 +30,7 @@ def main():
     template.globals["humanize_date"] = humanize_date
     resume = json.load(open("resume.json", "r"))
     rendered = template.render(resume=resume)
-    out = open("resume.html", "w")
+    out = open("rendered/index.html", "w")
     out.write(rendered)
     out.close()
 
