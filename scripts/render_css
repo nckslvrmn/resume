@@ -1,0 +1,5 @@
+#!/bin/bash
+
+npm i -g purgecss
+purgecss --css *.css --content rendered/index.html --output rendered --safelist @font-face
+rm *.css

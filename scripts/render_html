@@ -1,0 +1,31 @@
+#!/usr/bin/env python
+
+import json
+
+from humanize import naturaldelta, naturalday
+
+from dateutil.parser import parse
+from jinja2 import Template
+
+
+def humanize_duration(start, end):
+    return naturaldelta(parse(end) - parse(start)) if end is not None else ""
+
+
+def humanize_date(start, end):
+    return f"{naturalday(parse(start), format="%b %Y")} - {naturalday(parse(end), format="%b %Y") if end is not None else 'present'}"
+
+
+def main():
+    template = Template(open("resume.html.j2", "r").read())
+    template.globals["humanize_duration"] = humanize_duration
+    template.globals["humanize_date"] = humanize_date
+    resume = json.load(open("resume.json", "r"))
+    rendered = template.render(resume=resume)
+    out = open("rendered/index.html", "w")
+    out.write(rendered)
+    out.close()
+
+
+if __name__ == "__main__":
+    main()

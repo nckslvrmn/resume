@@ -1,0 +1,9 @@
+#!/bin/bash
+
+mkdir rendered/webfonts
+curl -s -o rendered/webfonts/fa-regular-400.woff2 https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-regular-400.woff2
+curl -s -o rendered/webfonts/fa-brands-400.woff2 https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-brands-400.woff2
+curl -s -o rendered/webfonts/fa-solid-900.woff2 https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-solid-900.woff2
+curl -s -o rendered/webfonts/opensans.woff2 https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw.woff2
+curl -s -o fontawesome.css https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+curl -s -o bootstrap.css https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css
