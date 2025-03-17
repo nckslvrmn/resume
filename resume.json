@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Nick Silverman",
-    "label": "Cloud Infrastructure Engineering Manager",
+    "label": "Production Engineer",
     "picture": "https://gravatar.webp.se/avatar/6bea3244af7ecd0ff34e25bed7184997?s=100",
     "email": "nckslvrmn@gmail.com",
     "website": "https://nckslvr.mn",
@@ -25,16 +25,25 @@
     ]
   },
   "work": [
+     {
+      "company": "Shopify",
+      "position": "Production Engineer",
+      "website": "https://www.shopify.com/",
+      "startDate": "2025-02-11",
+      "summary": "",
+      "highlights": []
+    },
     {
       "company": "Rue Gilt Groupe",
       "position": "Engineering Manager, Cloud Infrastructure",
       "website": "https://ruegiltgroupe.com/",
       "startDate": "2024-07-15",
+      "endDate": "2025-01-27",
       "summary": "",
       "highlights": [
-        "Leading a team of high performing cloud infrastructure engineers responsible for both maintaining our multiple cloud environments and designing/implementing cross-functional projects aligning with business goals",
-        "Championing the replacement of our primary CDN which will result in a drastic improvement in development speed and efficiency, and a nearly $500,000 annual cost reduction",
-        "Organizing the tech-wide replacement of a legacy job scheduling system, bringing mission critical asynchronous tasks into the cloud-native world and improving resiliency, reliability, and repeatability"
+        "Led a team of high performing cloud infrastructure engineers responsible for both maintaining multiple cloud environments and designing/implementing cross-functional projects aligning with business goals",
+        "Championed replacement of our primary CDN which resulted in a drastic improvement in development speed and efficiency, and a nearly $300,000 annual cost reduction",
+        "Organized tech-wide replacement of a legacy job scheduling system, bringing mission critical asynchronous tasks into the cloud-native world and improving resiliency, reliability, and repeatability"
       ]
     },
     {
