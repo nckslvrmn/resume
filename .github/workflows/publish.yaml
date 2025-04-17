@@ -44,3 +44,15 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  clean:
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      deployments: write
+    steps:
+      - name: clean old deployments and runs
+        uses: nckslvrmn/github_cleaner@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
