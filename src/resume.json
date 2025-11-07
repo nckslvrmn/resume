@@ -27,9 +27,18 @@
   "work": [
     {
       "company": "Shopify",
-      "position": "Production Engineer",
+      "position": "Senior Infrastructure Engineer",
+      "website": "https://www.shopify.com/",
+      "startDate": "2025-11-01",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "company": "Shopify",
+      "position": "Infrastructure Engineer",
       "website": "https://www.shopify.com/",
       "startDate": "2025-02-11",
+      "endDate": "2025-11-01",
       "summary": "",
       "highlights": []
     },
