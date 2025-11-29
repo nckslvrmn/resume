@@ -26,9 +26,6 @@
     <style>
         :root {
             --matrix-green: #00ff41;
-            --matrix-green-dim: #008f11;
-            --terminal-bg: #0d1117;
-            --terminal-text: #c9d1d9;
         }
 
         body {
@@ -48,64 +45,17 @@
             }
         }
 
-        @media (max-width: 767px) {
-            .card {
-                border: none !important;
-                background-color: transparent !important;
-            }
-
-            .card-body {
-                padding: 1rem !important;
-            }
-
-            .mobile-no-gap {
-                padding-top: 0 !important;
-                margin-top: 0 !important;
-            }
-        }
-
         .content-indent {
             margin-left: 2rem;
         }
 
-        @media (max-width: 767px) {
-            .content-indent {
-                margin-left: 0;
-            }
+        .section-spacing {
+            margin-bottom: 1rem;
         }
 
-        .theme-toggle {
-            position: fixed;
-            top: 2rem;
-            right: 2rem;
-            z-index: 1000;
-            padding: 0.5rem;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-            border-radius: 50%;
-            cursor: pointer;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .theme-toggle:hover {
-            transform: rotate(180deg);
-        }
-
-        @media (max-width: 768px) {
-            .theme-toggle {
-                top: 1rem;
-                right: 1rem;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .summary-indent {
-                text-indent: 0 !important;
+        @media (min-width: 768px) {
+            .section-spacing {
+                margin-bottom: 1.5rem;
             }
         }
 
@@ -128,10 +78,8 @@
             text-decoration: none;
         }
 
-        .raw-toggle {
+        .fixed-toggle {
             position: fixed;
-            bottom: 2rem;
-            right: 2rem;
             z-index: 1000;
             padding: 0.5rem;
             background: rgba(0, 0, 0, 0.5);
@@ -144,6 +92,20 @@
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
+        }
+
+        .theme-toggle {
+            top: 2rem;
+            right: 2rem;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(180deg);
+        }
+
+        .raw-toggle {
+            bottom: 2rem;
+            right: 2rem;
             color: var(--matrix-green);
             font-family: 'Fira Code', monospace;
             font-size: 1.5rem;
@@ -155,9 +117,38 @@
         }
 
         @media (max-width: 768px) {
+            .theme-toggle {
+                top: 1rem;
+                right: 1rem;
+            }
+
             .raw-toggle {
                 bottom: 1rem;
                 right: 1rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .card {
+                border: none !important;
+                background-color: transparent !important;
+            }
+
+            .card-body {
+                padding: 1rem !important;
+            }
+
+            .mobile-no-gap {
+                padding-top: 0 !important;
+                margin-top: 0 !important;
+            }
+
+            .content-indent {
+                margin-left: 0;
+            }
+
+            .summary-indent {
+                text-indent: 0 !important;
             }
         }
 
@@ -179,10 +170,7 @@
             font-weight: 900 !important;
         }
 
-        body.raw-mode i.fab {
-            font-weight: 400 !important;
-        }
-
+        body.raw-mode i.fab,
         body.raw-mode i.far {
             font-weight: 400 !important;
         }
@@ -210,6 +198,7 @@
             background: rgba(0, 255, 65, 0.2) !important;
         }
     </style>
+
     <script>
         function toggleTheme() {
             const html = document.documentElement;
@@ -273,82 +262,80 @@
                 document.getElementById('location').textContent = `${resume.basics.location.city}, ${resume.basics.location.region}, ${resume.basics.location.countryCode}`;
 
                 const contactLinksHtml = resume.basics.profiles.map(profile => `
-                    <a href="${profile.url}" target="_blank" class="btn btn-outline-secondary btn-sm me-2 mb-2">
-                        <i class="fab fa-${profile.network.toLowerCase()} me-1"></i>
-                        ${profile.network}
-                    </a>
-                `).join('');
+                        <a href="${profile.url}" target="_blank" class="btn btn-outline-secondary btn-sm me-2 mb-2">
+                            <i class="fab fa-${profile.network.toLowerCase()} me-1"></i>
+                            ${profile.network}
+                        </a>
+                    `).join('');
                 document.getElementById('contact-links').innerHTML = contactLinksHtml + `
-                    <a href="mailto:${resume.basics.email}" class="btn btn-outline-secondary btn-sm me-2 mb-2">
-                        <i class="fas fa-envelope me-1"></i>
-                        email
-                    </a>
-                `;
+                        <a href="mailto:${resume.basics.email}" class="btn btn-outline-secondary btn-sm me-2 mb-2">
+                            <i class="fas fa-envelope me-1"></i>
+                            email
+                        </a>
+                    `;
 
                 document.getElementById('summary').textContent = resume.basics.summary;
 
                 const workHtml = resume.work.map((company, companyIndex) => `
-                    <li class="pb-4 ${companyIndex > 0 ? 'border-top border-secondary pt-4' : ''}">
-                        <p class="mb-3">
-                            <strong class="fs-5">
-                                ${company.website ?
-                        `<a href="${company.website}" class="company-link" target="_blank">${company.company}</a>` :
-                        company.company
-                    }
-                            </strong>
-                        </p>
-                        ${company.positions.map(position => `
-                            <div class="mb-3 ms-3">
-                                <p class="mb-1">
-                                    <strong>${position.position}</strong>
-                                </p>
-                                <p class="text-muted mb-2">
-                                    <small>
-                                        <span>${humanizeDate(position.startDate, position.endDate)}</span>
-                                        <span>&nbsp;&nbsp;<i class="far fa-clock"></i>&nbsp;${humanizeDuration(position.startDate, position.endDate)}</span>
-                                    </small>
-                                </p>
-                                ${position.summary ? `<p class="mb-2">${position.summary}</p>` : ''}
-                                ${position.highlights && position.highlights.length > 0 ? `
-                                    <ul class="pb-2" style="list-style-type: '-  '">
-                                        ${position.highlights.map(highlight => `
-                                            <li class="my-1">${highlight}</li>
-                                        `).join('')}
-                                    </ul>
-                                ` : ''}
-                            </div>
-                        `).join('')}
-                    </li>
-                `).join('');
+                        <li class="pb-4 ${companyIndex > 0 ? 'border-top border-secondary pt-4' : ''}">
+                            <p class="mb-3">
+                                <strong class="fs-5">
+                                    ${company.website ?
+                                        `<a href="${company.website}" class="company-link" target="_blank">${company.company}</a>` :
+                                        company.company
+                                    }
+                                </strong>
+                            </p>
+                            ${company.positions.map(position => `
+                                <div class="mb-3 ms-3">
+                                    <p class="mb-1">
+                                        <strong>${position.position}</strong>
+                                    </p>
+                                    <p class="text-muted mb-2">
+                                        <small>
+                                            <span>${humanizeDate(position.startDate, position.endDate)}</span>
+                                            <span>&nbsp;&nbsp;<i class="far fa-clock"></i>&nbsp;${humanizeDuration(position.startDate, position.endDate)}</span>
+                                        </small>
+                                    </p>
+                                    ${position.summary ? `<p class="mb-2">${position.summary}</p>` : ''}
+                                    ${position.highlights && position.highlights.length > 0 ? `
+                                        <ul class="pb-2" style="list-style-type: '-  '">
+                                            ${position.highlights.map(highlight => `<li class="my-1">${highlight}</li>`).join('')}
+                                        </ul>
+                                    ` : ''}
+                                </div>
+                            `).join('')}
+                        </li>
+                    `).join('');
                 document.getElementById('work-experience').innerHTML = workHtml;
 
                 const skillsHtml = resume.skills.map(skill => `
-                    <li class="m-3">
-                        <strong>${skill.name}:</strong>
-                        <span>${skill.keywords.join(', ')}</span>
-                    </li>
-                `).join('');
+                        <li class="m-3">
+                            <strong>${skill.name}:</strong>
+                            <span>${skill.keywords.join(', ')}</span>
+                        </li>
+                    `).join('');
                 document.getElementById('skills-list').innerHTML = skillsHtml;
 
                 const educationHtml = resume.education.map(edu => `
-                    <div>
-                        <p class="mb-0"><strong>${edu.area},</strong>&nbsp;${edu.institution}</p>
-                        <p class="text-muted">
-                            <small>${humanizeDate(edu.startDate, edu.endDate)}</small>
-                        </p>
-                    </div>
-                `).join('');
+                        <div>
+                            <p class="mb-0"><strong>${edu.area},</strong>&nbsp;${edu.institution}</p>
+                            <p class="text-muted">
+                                <small>${humanizeDate(edu.startDate, edu.endDate)}</small>
+                            </p>
+                        </div>
+                    `).join('');
                 document.getElementById('education-list').innerHTML = educationHtml;
 
                 const volunteerHtml = resume.volunteer.map(volun => `
-                    <li class="card-nested">
-                        <p class="mb-0"><strong>${volun.position}</strong>,&nbsp;${volun.organization}</p>
-                        <p class="text-muted">
-                            <small>${humanizeDate(volun.startDate, volun.endDate)}</small>
-                        </p>
-                        <p>${volun.summary}</p>
-                    </li>
-                `).join('');
+                        <li class="card-nested">
+                            <p class="mb-0"><strong>${volun.position}</strong>,&nbsp;${volun.organization}</p>
+                            <p class="text-muted">
+                                <small>${humanizeDate(volun.startDate, volun.endDate)}</small>
+                            </p>
+                            <p>${volun.summary}</p>
+                        </li>
+                    `).join('');
                 document.getElementById('volunteer-list').innerHTML = volunteerHtml;
 
             } catch (error) {
@@ -362,11 +349,11 @@
 </head>
 
 <body class="bg-dark-subtle">
-    <div class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+    <div class="fixed-toggle theme-toggle" onclick="toggleTheme()" title="Toggle theme">
         <i class="fa fa-lg fa-sun" id="theme-icon"></i>
     </div>
 
-    <div class="raw-toggle" onclick="toggleRawMode()" title="Toggle raw mode">#</div>
+    <div class="fixed-toggle raw-toggle" onclick="toggleRawMode()" title="Toggle raw mode">#</div>
 
     <div class="container" style="max-width: 55em">
         <div class="row pb-1 pt-2">
@@ -376,7 +363,7 @@
                         <div class="row">
                             <div class="col-12 col-md-auto text-center text-md-start">
                                 <div class="profile-image-wrapper">
-                                    <img id="profile-image" class="rounded-circle w-100" src="" alt="">
+                                    <img id="profile-image" class="rounded-circle w-100">
                                 </div>
                             </div>
                             <div class="col-12 col-md text-center text-md-start">
@@ -399,7 +386,7 @@
             <div class="col px-2">
                 <div class="card">
                     <div class="card-body px-3 px-md-5 py-3 py-md-5">
-                        <div class="mb-4 mb-md-5">
+                        <div class="section-spacing">
                             <div class="d-flex align-items-center mb-3">
                                 <i class="fa fa-lg fa-user text-muted me-2" style="width: 2rem"></i>
                                 <h5 class="text-muted mb-0">About</h5>
@@ -410,7 +397,7 @@
                             </div>
                         </div>
 
-                        <div class="mb-4 mb-md-5">
+                        <div class="section-spacing">
                             <div class="d-flex align-items-center mb-3">
                                 <i class="fa fa-lg fa-briefcase text-muted me-2" style="width: 2rem"></i>
                                 <h5 class="text-muted mb-0">Work Experience</h5>
@@ -422,7 +409,7 @@
                             </div>
                         </div>
 
-                        <div class="mb-4 mb-md-5">
+                        <div class="section-spacing">
                             <div class="d-flex align-items-center mb-3">
                                 <i class="fa fa-lg fa-code text-muted me-2" style="width: 2rem"></i>
                                 <h5 class="text-muted mb-0">Skills</h5>
@@ -434,7 +421,7 @@
                             </div>
                         </div>
 
-                        <div class="mb-4 mb-md-5">
+                        <div class="section-spacing">
                             <div class="d-flex align-items-center mb-3">
                                 <i class="fas fa-lg fa-graduation-cap text-muted me-2" style="width: 2rem"></i>
                                 <h5 class="text-muted mb-0">Education</h5>
