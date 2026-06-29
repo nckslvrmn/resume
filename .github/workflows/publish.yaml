@@ -29,6 +29,21 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Build PDF
+        run: |
+          python3 -m http.server 8000 --directory src &
+          SERVER_PID=$!
+          trap "kill $SERVER_PID" EXIT
+          for i in {1..20}; do
+            curl -fsS http://127.0.0.1:8000/index.html >/dev/null && break
+            sleep 0.2
+          done
+          CHROME=$(command -v google-chrome || command -v chromium-browser || command -v chromium || true)
+          if [ -z "$CHROME" ]; then
+            echo "Chrome is required to build the PDF"
+            exit 1
+          fi
+          "$CHROME" --headless=new --disable-gpu --no-sandbox --run-all-compositor-stages-before-draw --virtual-time-budget=5000 --no-pdf-header-footer --print-to-pdf="$PWD/src/resume.pdf" "http://127.0.0.1:8000/index.html?pdf=1"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
